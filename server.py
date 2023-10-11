@@ -1,17 +1,19 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 
 # dunder method __name__ parametro especial
 app = Flask(__name__) 
 
 @app.route("/")
 def index():
-    return '''
-           <h1>Eu não acredito!</h1> 
-           '''
-@app.route("/aff")
-def aff():
-    return '''
-           <h1>aff! É verdade mesmo!</h1> 
-           '''
+    return render_template('formulario.html') 
+
+@app.route("/servidor", methods =['POST'])
+def servidor():
+    dados = request.form
+    print(dados)
+    return ''
+    
+# def index():
+#     return 
 
 
