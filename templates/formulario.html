@@ -4,13 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desweb</title>
+    <style>
+        fieldset {
+            margin: 10px;
+            border-color: blueviolet;
+            border-radius: 10px;
+            width: 300px;
+        }
+        .btn {
+            margin: 1em;
+            background-color: blueviolet;
+            color: white;
+            padding: 0.5em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        body {
+            font-family: monospace;
+            color:blueviolet
+        }
+        input {
+            border: 0;
+            border-bottom: 1px solid blueviolet;
+            
+        }
+        input:focus {
+            outline: none;
+            
+        }
+        input::-webkit-file-upload-button {
+            background-color: green;
+            color: white;
+            
+        }
+        h1 {
+            margin: 1em;
+            margin-left: 2.5em;
+        }
+        #txtarquivo{
+            background-color: blueviolet;
+            color: white;
+            border-radius: 10px;
+        }
+        input::placeholder {
+            color: rgb(203, 166, 239);
+        }
+    </style>
 </head>
 <body>  
     <h1>Formulário!</h1>
-    <form action="/servidor" method="POST">
-        <input type="text" name="nome" placeholder="Escreva seu nome">
-        <input type="submit" value="Enviar">
+    <form 
+        action="/servidor" 
+        method="POST"
+        enctype="multipart/form-data"
+    >
+        <fieldset>
+            <label for="txtnome">Nome</label>
+            <input type="text" name="nome" id="txtnome" placeholder="Escreva seu nome">
+        </fieldset>
+        <fieldset>
+            <label for="password">Senha</label>
+            <input type="password" name="senha" id="password">
+        </fieldset>
+        <fieldset>
+            <label for="date">Data</label>
+            <input type="date" name="data" id="date">
+        </fieldset>
+        <fieldset>
+            <label for="sexo">Sexo</label>
+            <input type="radio" name="sexo" id="sexo" value="masc"> masculino
+            <input type="radio" name="sexo" id="sexo" value="fem"> feminino
+        </fieldset>
+        <fieldset>
+            <label for="date">Delicias</label>
+            <input type="checkbox" name="chocolate" id="date" value="chocolate"> chocolate
+            <input type="checkbox" name="coca" id="date" value="coca"> coca-cola
+        </fieldset>
+        <fieldset>
+            <label for="txtarquivo">Arquivo</label>
+            <input type="file" name="arquivo" id="txtarquivo">
+        </fieldset>
+        <input class="btn" type="submit" value="Enviar">
     </form>    
 </body>
 </html>

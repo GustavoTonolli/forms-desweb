@@ -10,7 +10,16 @@ def index():
 @app.route("/servidor", methods =['POST'])
 def servidor():
     dados = request.form
-    print(dados)
+    print(dados.get('nome'))
+    print(dados.get('senha'))
+    print(dados.get('data'))
+    print(dados.get('sexo'))
+    print(dados.get('chocolate'))
+    print(dados.get('coca'))
+    print(dados.get('arquivo'))
+    meuarquivo = request.files['arquivo']
+    if meuarquivo != None:
+        meuarquivo.save('/Users/gustavotonolli/Documents' + meuarquivo.filename)
     return ''
     
 # def index():
